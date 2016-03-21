@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="content/css/bootstrap.css">
+    <link rel="stylesheet" href="content/css/bootstrap-theme.css">
+    <script src="vendor/jquery-1.11.3.js"></script>
+    <script src="vendor/bootstrap.js"></script>
+    <script src="vendor/angular.js"></script>
+</head>
+<body ng-app="CGI.Shopper">
+<div id="container" ng-controller="mainCtrl">
+    <div ng-include="headerUrl"></div>
+    <div ng-include="contentTemplate"></div>
+    <div ng-include="footerUrl"></div>
+</div>
+<script src="app/app.js"></script>
+<script src="app/controllers/mainCtrl.js"></script>
+</body>
+</html>
