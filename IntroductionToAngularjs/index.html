@@ -1,10 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="cgiApp">
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+    <title>Introduction To Angularjs</title>
+    <link rel="stylesheet" href="content/css/bootstrap.css">
+    <link rel="stylesheet" href="content/css/bootstrap-theme.css">
+    <script src="vendor/jquery-1.11.3.js"></script>
+    <script src="vendor/bootstrap.js"></script>
+    <script src="vendor/angular.js"></script>
 
+</head>
+<body >
+<div class="container">
+<div ng-controller="registerCtrl" class="panel panel-default">
+        <div class="panel-heading ">Register</div>
+    <div class="panel-body">
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label  class="control-label col-xs-2">First Name</label>
+                <div class="col-xs-4">
+                    <input type="text" class="form-control"
+                           ng-model="register.firstName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label  class="control-label col-xs-2">Last Name</label>
+                <div class="col-xs-4">
+                    <input type="text" class="form-control"
+                           ng-model="register.lastName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label  class="control-label col-xs-2">Gender</label>
+                <div class="col-xs-4">
+                    <input type="radio" ng-model="register.gender"  value="M" name="gender">Male</input>
+                    <input type="radio" ng-model="register.gender"  value="F" name="gender">Female</input>
+                </div>
+            </div>
+            <div class="form-group">
+                <label  class="control-label col-xs-2">Country</label>
+                <div class="col-xs-4">
+                        <select ng-model="register.country"></select>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <div class="checkbox">
+                        <label><input type="checkbox" ng-model="register.terms">I Agree Terms</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-offset-2 col-xs-10">
+                    <button ng-click="registerUser()" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+
+</div>
+</div>
+
+
+<script src="app/app.js"></script>
+<script src="app/controllers/mainCtrl.js"></script>
+<script src="app/controllers/registerCtrl.js"></script>
 </body>
 </html>
