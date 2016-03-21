@@ -40,7 +40,8 @@
             <div class="form-group">
                 <label  class="control-label col-xs-2">Country</label>
                 <div class="col-xs-4">
-                        <select ng-model="register.country"></select>
+                        <select ng-model="register.country"
+                                ng-options="country.value for  country in countryList"></select>
                 </div>
             </div>
             <div class="form-group">
@@ -60,11 +61,42 @@
     </div>
 
 </div>
+
+    <div ng-controller="userCtrl">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Row</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th><input type="text" placeholder="search"
+                           ng-model="userSearch"> </th>
+                <th><select ng-model="selectedCountry" ng-change="changeCountry()" ng-options="country.text for country in countryList"></select> </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat=" user in users|filter:{firstName:userSearch}">
+                <td>{{$index}}</td>
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.email|uppercase}}</td>
+                <td>{{user.phone|phoneFormat:selectedCountry.value}}</td>
+                <td>{{user.dob|date:'MM/dd/yy'}}</td>
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
 </div>
 
 
 <script src="app/app.js"></script>
+<script src="common/common.js"></script>
+<script src="common/phoneformat.js"></script>
+
 <script src="app/controllers/mainCtrl.js"></script>
 <script src="app/controllers/registerCtrl.js"></script>
+<script src="app/controllers/userCtrl.js"></script>
 </body>
 </html>

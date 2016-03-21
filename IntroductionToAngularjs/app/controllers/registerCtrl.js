@@ -3,14 +3,7 @@
  */
 angular.module("cgiApp")
        .controller("registerCtrl",function($scope){
-            $scope.register={
-                firstName:"",
-                lastName:"",
-                age:"",
-                gender:"",
-                country:"",
-                terms:""
-            }   ;
+            $scope.register={};
 
           $scope.genderList=[
               {key:"Male",value:"M"},
