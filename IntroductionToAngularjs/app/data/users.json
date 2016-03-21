@@ -1,0 +1,7 @@
+{
+  "users":[
+    {"firstName":"Kiran","lastName":"PVS","email":"kiran@gmail.com"},
+    {"firstName":"Sunil","lastName":"BBB","email":"sunil@gmail.com"},
+    {"firstName":"Harish","lastName":"HM","email":"harish@gmail.com"}
+  ]
+}

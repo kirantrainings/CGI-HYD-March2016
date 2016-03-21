@@ -2,18 +2,25 @@
  * Created by Administrator on 3/21/2016.
  */
 angular.module('cgiApp')
-       .controller('userCtrl',function($scope,$filter){
+       .controller('userCtrl',function($scope,$filter,userFact){
         $scope.changeCountry =function(){
           var output=  $filter("phoneFormat")("1234567890",$scope.selectedCountry.value);
             console.log(output);
         };
-        $scope.countryList=[
-            {text:"India",value:"IN"},
-            {text:"United State",value:"US"},
-            {text:"Canada",value:"CA"}
-        ];
-        $scope.users=[
-           { firstName:"kiran",lastName:"PVS",email:"kiran@gmail.com",dob:new Date().getDate(),phone:"2132314567"},
-           { firstName:"sunil",lastName:"abc",email:"sunil@gmail.com",dob:new Date().getDate(),phone:"1234567890"},
-           { firstName:"nag",lastName:"def",email:"nag@gmail.com",dob:new Date().getDate(),phone:"2345678901"}]
+
+        userFact.getUserInfo()
+            .then(function(response){
+                console.log(response);
+                $scope.users=response.data.users;
+            })
+            .catch(function(response){
+                console.log(response);
+            })
+            .finally(function(){
+
+            });
+
+        $scope.countryList= userFact.getUserCountries();
+
+
     });
