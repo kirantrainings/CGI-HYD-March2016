@@ -19,8 +19,6 @@ angular.module('cgi.directives')
             };
 
             $(element).bind('keypress',handleKeyPress);
-
-
         };
         return directiveObj;
     }]);
