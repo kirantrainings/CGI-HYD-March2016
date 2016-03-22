@@ -11,11 +11,19 @@
 </head>
 <body ng-app="CGI.Shopper">
 <div id="container" ng-controller="mainCtrl">
+
     <div ng-include="headerUrl"></div>
     <div ng-include="contentTemplate"></div>
-    <div ng-include="footerUrl"></div>
+     <cgi-footer></cgi-footer>
+    <div cgi-footer></div>
+    <div class="cgi-footer"></div>
+    <input type="text" cgi-number-only />
+
 </div>
 <script src="app/app.js"></script>
 <script src="app/controllers/mainCtrl.js"></script>
+<script src="app/directives/cgiDirectivesModule.js"></script>
+<script src="app/directives/cgiBrand.js"></script>
+<script src="app/directives/cgiNumberOnly.js"></script>
 </body>
 </html>

@@ -6,7 +6,6 @@
     angular.module('CGI.Shopper')
         .controller('mainCtrl',
         ['$scope',function($scope){
-
             $scope.headerUrl="app/views/header.tpl.html";
             $scope.footerUrl="app/views/footer.tpl.html";
             $scope.loadPage= function(tab){
